@@ -1,4 +1,4 @@
-import {SafeAreaView, StyleSheet} from 'react-native';
+import {SafeAreaView, StatusBar, StyleSheet} from 'react-native';
 import {COLORS} from '@/shared/lib/constants/constants';
 import HeaderComponent from '@/widgets/header/ui/header.component';
 import MainPage from '@/pages/main-page/ui/main.page';
@@ -8,6 +8,7 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <HeaderComponent />
       <MainPage />
+      <StatusBar />
     </SafeAreaView>
   );
 }

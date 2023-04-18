@@ -1,10 +1,16 @@
-import { View, StyleSheet } from 'react-native';
+import {View, StyleSheet, } from 'react-native';
 import {COLORS} from '@/shared/lib/constants/constants';
+import {MenuBurgerIconComponent} from '@/shared/ui/menu-burger-icon';
+import {useOpen} from '@/shared/lib/hooks/use-open';
 
 export default function HeaderComponent() {
+
+  const {isOpen, toggleHandler} = useOpen()
+
   return (
     <View style={styles.container}>
       <View style={styles.avatar}/>
+      <MenuBurgerIconComponent isOpen={isOpen} toggleHandler={toggleHandler}/>
     </View>
   );
 }
@@ -21,12 +27,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     display: "flex",
     flexDirection: "row",
-    alignItems: "center"
+    alignItems: "center",
+    justifyContent: "space-between"
   },
   avatar: {
     height: 40,
     width: 40,
     borderRadius: 1000,
     backgroundColor: "#fff"
-  }
+  },
 });
